@@ -1,0 +1,34 @@
+{% extends'flask2.html'%}
+
+{% block head %}
+<title>Posts</title>
+{%endblock %}
+
+{% block body %}
+<br>
+<div class="d-flex justify-content-between align-items-center">
+    <h1>All Posts</h1>
+    <a class="btn btn-success" href="/posts/new">+ New Post</a>
+</div>
+<hr>
+
+    {%for x in post %}
+    
+       <h1>{{x.title}}</h1>
+
+       {%if x.author%}
+            <small>Written by {{x.author}} on {{x.date_posted}}</small>
+       {%else%}
+       <small>Written by Unknown on {{x.date_posted}}</small>
+       {%endif%}
+       <br>
+       <br>
+
+     <p style="white-space: pre-wrap">{{x.content}}</p>
+     <a class="btn btn-danger" href="/posts/delete/{{x.id}}">Delete</a>
+     <a class="btn btn-primary" href="/posts/edit/{{x.id}}">edit</a>
+     <br>
+     <hr>
+    {%endfor%}
+{%endblock%}
+

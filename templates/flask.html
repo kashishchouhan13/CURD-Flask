@@ -1,0 +1,22 @@
+{% extends'flask2.html'%}
+
+{% block head %}
+<title>home</title>
+{%endblock %}
+
+{% block body %}
+<h1>Home Page</h1>
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <h1>Welcome</h1>
+            <p>Welcome to the my Blog Post Project!</p>
+            <p>At the smallest breakpoint, the collapse plugin is used to hide the links and show a menu button to
+                toggle the collapsed content.</p>
+            <p>
+                <a class="btn btn-primary" href="/posts" role="button">Go to Posts  &raquo;</a>
+            </p>
+        </div>
+    </div>
+</main>
+{%endblock%}
